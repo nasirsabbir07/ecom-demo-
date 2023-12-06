@@ -2,7 +2,6 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { User } from '../interfaces/auth';
 import { Observable } from 'rxjs';
-import { subscribe } from 'node:diagnostics_channel';
 
 @Injectable({
   providedIn: 'root',
@@ -17,49 +16,36 @@ export class AuthService {
     return this.http.post(`${this.baseUrl}/users`, userDetails);
   }
 
-  // getUserByEmail(email: string): Observable<User[]> {
-  //   return this.http.get<User[]>(`${this.baseUrl}/users?email=${email}`);
-  // }
-
-  // getUsers(): Observable<{ users: User[] }> {
-  //   return this.http.get<{ users: User[] }>(`${this.baseUrl}/users`);
-  // }
-
-  // login(email: string, password: string): boolean {
-  //   this.getUsers().subscribe((data) => {
-  //     const foundUser = data.users.find(
-  //       (user: { email: string; password: string }) => {
-  //         return user.email == email && user.password == password;
-  //       }
-  //     );
-
-  //     if (foundUser) {
-  //       this.isLoggedIn = true;
-  //       console.log(foundUser);
-  //       return true;
-  //     } else {
-  //       return false;
-  //     }
-  //   });
-  //   return false;
-  // }
-
-  getUsers(): Observable<{ users: User[] }> {
-    return this.http.get<{ users: User[] }>(`${this.baseUrl}/users`);
+  getUsers(): Observable<User[]> {
+    return this.http.get<User[]>(`${this.baseUrl}/users`);
   }
 
   login(useremail: string, userpassword: string) {
-    this.getUsers().subscribe((data) => {
-      const foundUser = data.users.find(
-        (user: { email: string; password: string }) => {
-          return user.email === useremail && user.password === userpassword;
+    this.getUsers().subscribe(
+      (data: User[]) => {
+        console.log('Received data:', data); // Log the received data
+
+        if (Array.isArray(data)) {
+          const foundUser = data.find((user: any) => {
+            return user.email === useremail && user.password === userpassword;
+          });
+
+          if (foundUser) {
+            console.log('User found:', foundUser);
+            // Perform actions for successful login
+          } else {
+            console.log('User not found');
+            // Handle unsuccessful login
+          }
+        } else {
+          console.log('Invalid data format');
+          // Handle unexpected data format
         }
-      );
-      if (foundUser) {
-        console.log('found user');
-      } else {
-        console.log('user not found');
+      },
+      (error) => {
+        console.error('Error fetching users:', error);
+        // Handle error scenario
       }
-    });
+    );
   }
 }
