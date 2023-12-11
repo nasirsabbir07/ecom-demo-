@@ -1,19 +1,18 @@
-<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-x-6 gap-y-10">
-  <!-- Product Card -->
-  <a
-    class="flex flex-col bg-white drop-shadow hover:drop-shadow-lg hover:opacity-70 rounded-md"
-  >
-    <img
-      src=" https://www.kindacode.com/wp-content/uploads/2022/07/kindacode-example.png"
-      alt="Fiction Product"
-      class="h-36 object-cover rounded-tl-md rounded-tr-md"
-    />
-    <div class="px-3 py-2">
-      <h1 class="font-semibold">Product Two</h1>
-      <p class="text-sm">$69.99</p>
-    </div>
-  </a>
-  <a
+<!-- Product Card -->
+<a
+  class="flex flex-col bg-white drop-shadow hover:drop-shadow-lg hover:opacity-70 rounded-md"
+>
+  <img
+    [src]="product.photo"
+    alt="Fiction Product"
+    class="h-36 object-cover rounded-tl-md rounded-tr-md"
+  />
+  <div class="px-3 py-2">
+    <h1 class="font-semibold">{{ product.name }}</h1>
+    <p class="text-sm">{{ product.price }}</p>
+  </div>
+</a>
+<!-- <a
     class="flex flex-col bg-white drop-shadow hover:drop-shadow-lg hover:opacity-70 rounded-md"
   >
     <img
@@ -97,5 +96,4 @@
       <h1 class="font-semibold">Product one</h1>
       <p class="text-sm">$69.99</p>
     </div>
-  </a>
-</div>
+  </a> -->

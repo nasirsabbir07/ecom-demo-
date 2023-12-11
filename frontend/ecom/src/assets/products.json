@@ -1,0 +1,58 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "product_name": "Product One",
+      "photo": "https://www.kindacode.com/wp-content/uploads/2022/07/kindacode-example.png",
+      "price": "69.99"
+    },
+    {
+      "id": 2,
+      "product_name": "Product two",
+      "photo": "https://www.kindacode.com/wp-content/uploads/2022/07/kindacode-example.png",
+      "price": "69.99"
+    },
+    {
+      "id": 3,
+      "product_name": "Product three",
+      "photo": "https://www.kindacode.com/wp-content/uploads/2022/07/kindacode-example.png",
+      "price": "69.99"
+    },
+    {
+      "id": 4,
+      "product_name": "Product four",
+      "photo": "https://www.kindacode.com/wp-content/uploads/2022/07/kindacode-example.png",
+      "price": "69.99"
+    },
+    {
+      "id": 5,
+      "product_name": "Product five",
+      "photo": "https://www.kindacode.com/wp-content/uploads/2022/07/kindacode-example.png",
+      "price": "69.99"
+    },
+    {
+      "id": 6,
+      "product_name": "Product six",
+      "photo": "https://www.kindacode.com/wp-content/uploads/2022/07/kindacode-example.png",
+      "price": "69.99"
+    },
+    {
+      "id": 7,
+      "product_name": "Product seven",
+      "photo": "https://www.kindacode.com/wp-content/uploads/2022/07/kindacode-example.png",
+      "price": "69.99"
+    },
+    {
+      "id": 8,
+      "product_name": "Product eight",
+      "photo": "https://www.kindacode.com/wp-content/uploads/2022/07/kindacode-example.png",
+      "price": "69.99"
+    },
+    {
+      "id": 9,
+      "product_name": "Product nine",
+      "photo": "https://www.kindacode.com/wp-content/uploads/2022/07/kindacode-example.png",
+      "price": "69.99"
+    }
+  ]
+}
