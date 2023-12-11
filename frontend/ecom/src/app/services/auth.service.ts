@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class AuthService {
-  private baseUrl = 'http://localhost:3000';
+  private baseUrl = 'http://localhost:4000';
 
   // isLoggedIn = false;
   constructor(private http: HttpClient) {}
@@ -45,7 +45,7 @@ export class AuthService {
       (error) => {
         console.error('Error fetching users:', error);
         // Handle error scenario
-      }
+      },
     );
   }
 }
