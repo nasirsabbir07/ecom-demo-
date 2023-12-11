@@ -1,7 +1,13 @@
 <div class="flex flex-col h-screen">
   <div><app-header></app-header></div>
   <div class="flex-grow px-10 py-20">
-    <app-products></app-products>
+    <div
+      class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-x-6 gap-y-10"
+    >
+      @for (product of productList; track product.id) {
+        <app-products [product]="product"></app-products>
+      }
+    </div>
   </div>
   <div><app-footer></app-footer></div>
 </div>
